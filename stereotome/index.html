@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zn,cmn-hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="discription" title="a">
+	<title>aaa</title>
+	<link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+<body>
+
+<div class="cube">
+<ul class="imgs init">
+<li class="img1 "><img src="img/img1.jpg" alt=""></li>
+<li class="img2 "><img src="img/img2.jpg" alt=""></li>
+<li class="img3 "><img src="img/img3.jpg" alt=""></li>
+<li class="img4 "><img src="img/img4.jpg" alt=""></li>
+<li class="img5 "><img src="img/img5.jpg" alt=""></li>
+<li class="img6 "><img src="img/img6.jpg" alt=""></li>
+</ul>
+</div>
+
+
+<div class="table">
+<input type="image" src="img/img1.jpg" id ="input-img1">
+<input type="image" src="img/img2.jpg" id ="input-img2">
+<input type="image" src="img/img3.jpg" id ="input-img3">
+<input type="image" src="img/img4.jpg" id ="input-img4">
+<input type="image" src="img/img5.jpg" id ="input-img5">
+<input type="image" src="img/img6.jpg" id ="input-img6">
+</div>
+<script type="text/javascript">
+(function(){
+var imgs = document.getElementsByClassName("imgs")[0];
+var table = document.getElementsByClassName("table")[0];
+var init = imgs.classList;
+var Init = init[1]
+
+console.log(init)
+
+table.addEventListener("click",function(e){
+var current = e.target.id;
+if(current != Init){
+
+init.replace(Init,current)
+console.log(init)
+Init = current;
+
+}
+
+})
+
+
+
+
+
+
+
+
+}());
+
+
+</script>
+</body>
+</html>
