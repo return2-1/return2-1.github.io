@@ -5,7 +5,7 @@ gradeboard:document.getElementsByClassName("gradeboard")[0],
 over : document.getElementsByClassName("over")[0],
 score:0,
 lostletter:0,
-maxlost:3,
+maxlost:10,
 //成绩内容函数
 gradecontent:function(){
      
