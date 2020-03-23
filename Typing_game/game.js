@@ -96,7 +96,7 @@ add: function (){
     
    var addletter = setInterval(function(){
      if(self.addLock){clearInterval(addletter);}
-   	createLetter();},650);
+   	createLetter();},500);
 },
 
 //字母下落功能
@@ -117,7 +117,7 @@ setInterval(function(){
 			
 			
 		
-	},duration * 1000);
+	},duration * 2000);
 
 },
 //字母消失功能
