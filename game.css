@@ -1,58 +1,102 @@
-#game {
-    position: fixed;
-    width: 100%;
+*{padding:0;
+  margin: 0;
+}
+.game{
+	position:fixed;
+	width: 100%;
+	height:100%;
+	background-image:url('./img/bg.jpg');
+	background-size:100% 100% ;
+	background-repeat:no-repeat;
+	
+}
+ .button{
+	position:absolute;
+	width:150px;
+	height:50px;
+	top:50%;
+	left:50%;
+	font-weight:bold;
+	font-size:24px;
+	line-height:50px;
+	text-align:center;
+     transform:translate(-50%,-50%);
+     background-color:#b0e8f1;
+     color:#fff;
+     border-radius:15px;
+     border:1px solid #d8ecec;
+     cursor:pointer;
+}
+ .button:hover{
+ 	border:2px solid #d8ecec;
+ }
+.game .letter-container{
+	position:absolute;
     height: 100%;
-    left: 0;
-    top: 0;
-    background: url("./img/bg.jpg") center /cover;
+    width: 70%;
+    left:0;
 }
-
-.board {
-    position: absolute;
-    width: 300px;
-    height: 360px;
-    background: url("./img/board.png") left top/100% 100%;
-    right: 30px;
-    bottom: 30px;
+.letter-container .letter{
+	position:absolute;
+	width:100px;
+	height:100px;
 }
+.game .board{
+	position:absolute;
+	width:300px;
+	height:360px;
+	background-image:url("./img/board.png") ;
+	background-size:100% 100%;
+	right:20px;
+	bottom:30px;
 
-.board #score{
+}
+.game .board .gradeboard{
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right:90px;
+    bottom:190px;
     font-size: 1.2em;
     font-weight: bold;
-    margin-top: 80px;
-}
+    
 
-.letter-container{
-    position: absolute;
-    left: 0;
-    right: 330px;
-    height: 100%;
-    top: 0;
 }
+.gradeboard p{
+	line-height:40px;
 
-.letter-container .letter{
-    position: absolute;
-    width: 100px;
-    height: 100px;
 }
+.game .over{
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	background:#0008;
+	color:#fff;
+	display:none;
 
-.over{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #0008;
-    color: #fff;
-    display: none;
 }
-
 .over p{
-    margin: 0;
-    font-size: 3em;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
+	top:50%;
+	left:50%;
+	font-size:3em;
+	position:absolute;
+     transform:translate(-50%,-50%);
+
+}
+.over .rebirth{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,100%);
+	font-size:1.5em;
+	color:#fff;
+	width:150px;
+	height:50px;
+	border:1px solid  #d8ecec;
+	background:rgba(0,0,0,0.2);
+	line-height: 50px;
+	text-align:center;
+	border-radius:50px;
+
+}
+.over .rebirth:hover{
+	border:1.5px solid  #d8ecec;
 }
