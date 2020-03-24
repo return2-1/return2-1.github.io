@@ -44,11 +44,11 @@ for(let i = 0; i < len; i ++){
 		}else if(i == 1){
 			grade.maxlost = 10;
 			fallspeed = 2;
-			createspeed = 1;
+			createspeed = 2;
 		}else if(i == 2){
 			grade.maxlost = 5;
-			fallspeed= 1.5;
-			createspeed = 1;
+			fallspeed= 2;
+			createspeed = 1.5;
 		}
 	},false)
 }
