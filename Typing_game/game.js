@@ -43,12 +43,12 @@ for(let i = 0; i < len; i ++){
 
 		}else if(i == 1){
 			grade.maxlost = 10;
-			fallspeed = 2;
-			createspeed = 2;
+			fallspeed = 2.7;
+			createspeed = 1.8;
 		}else if(i == 2){
 			grade.maxlost = 5;
-			fallspeed= 2;
-			createspeed = 1.5;
+			fallspeed= 2.5;
+			createspeed = 1.8;
 		}
 	},false)
 }
