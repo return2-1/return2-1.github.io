@@ -5,7 +5,7 @@ gradeboard:document.getElementsByClassName("gradeboard")[0],
 over : document.getElementsByClassName("over")[0],
 score:0,
 lostletter:0,
-maxlost:10,
+maxlost:15,
 //成绩内容函数
 gradecontent:function(){
      
@@ -27,6 +27,35 @@ lostLetter:function(){
 	this.gradecontent();
 },
 }
+//困难级别功能
+var fallspeed = 3;
+var createspeed = 2;
+var gameDeploy = document.getElementsByClassName("gameDeploy")[0];
+var degreeDom = document.getElementsByClassName("degree")[0];
+function degree(){
+var lis = degreeDom.getElementsByClassName("di");
+let len = lis.length;
+for(let i = 0; i < len; i ++){
+	lis[i].addEventListener('click',function(){
+		if(i == 0){
+			grade.maxlost = 15;
+			
+
+		}else if(i == 1){
+			grade.maxlost = 10;
+			fallspeed = 2;
+			createspeed = 1;
+		}else if(i == 2){
+			grade.maxlost = 5;
+			fallspeed= 1.5;
+			createspeed = 1;
+		}
+	},false)
+}
+
+grade.gradecontent();
+};
+gameDeploy.addEventListener('click',degree,false);
 grade.gradecontent();
 
 
@@ -96,15 +125,16 @@ add: function (){
     
    var addletter = setInterval(function(){
      if(self.addLock){clearInterval(addletter);}
-   	createLetter();},500);
+   	createLetter();},createspeed * 500);
 },
 
 //字母下落功能
 fall : function (){
 var self = this;
 
-setInterval(function(){
-	if(self.addLock){return;};
+var time = setInterval(function(){
+	if(grade.lostletter == grade.maxlost){clearInterval(time)};
+	if(self.addLock){ return;};
 		for(var i = 0; i < letters.length; i ++){
 			var letter = letters[i];
             if(parseInt( window.getComputedStyle(letter.dom,null).top) >= parseInt( window.getComputedStyle(letterImgs,null).height)){
@@ -117,7 +147,8 @@ setInterval(function(){
 			
 			
 		
-	},duration * 2000);
+	},16 * fallspeed
+);
 
 },
 //字母消失功能
@@ -137,7 +168,7 @@ var startButton = document.getElementsByClassName("button")[0];//将游戏开关
 var gameMethod = function(){
 	startButton.addEventListener ('click',function(){
 	go.start();
-	startButton.style.display = "none";
+	gameDeploy.style.display = "none";
 },false);
 rebirth.addEventListener('click',function(){
 for(var i = 0; i < letters.length; i++){
@@ -152,8 +183,7 @@ grade.lostletter = 0;
 grade.over.style.display = "none";
 grade.gradecontent();
 go.addLock = false;
-go.add();
-
+go.start();
 	
 })
 setTimeout(go.fall,10)
