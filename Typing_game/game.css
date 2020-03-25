@@ -127,6 +127,7 @@
 	list-style:none;
 	text-align:left;
      perspective:800px;
+     transition: all .8s; 
 
 
 }
@@ -139,10 +140,12 @@ line-height:25px;
 background:#b0efff;
 transform:rotateY(90deg);
 transition:all .8s cubic-bezier(0.075,0.82,.165,1);
+cursor:pointer;
 }
-.degree ul .di:after{
-	content:"";
-	display:block;
+
+.degree ul .di .click{
+	
+	display:none;
 	position:absolute;
 	width:20px;
 	height:20px;
@@ -152,10 +155,11 @@ transition:all .8s cubic-bezier(0.075,0.82,.165,1);
 	top:0px;
 }
 .degree ul:hover .di{
-	transform:rotate(0deg);
-	cursor:pointer;
+
+	    transform:rotateY(0deg); 
+
 }
-.degree ul:hover .di:hover{
+.degree ul .di:hover{
 	background:#b0e8f1;
 }
 .degree ul .di:nth-child(1){

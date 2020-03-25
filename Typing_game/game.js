@@ -30,30 +30,62 @@ lostLetter:function(){
 //困难级别功能
 var fallspeed = 3;
 var createspeed = 2;
+var difficulButton = false;
 var gameDeploy = document.getElementsByClassName("gameDeploy")[0];
 var degreeDom = document.getElementsByClassName("degree")[0];
-function degree(){
+var pull = degreeDom.getElementsByClassName("pull")[0];
+var	img = degreeDom.getElementsByTagName("img");
 var lis = degreeDom.getElementsByClassName("di");
-let len = lis.length;
-for(let i = 0; i < len; i ++){
-	lis[i].addEventListener('click',function(){
-		if(i == 0){
-			grade.maxlost = 15;
-			
+img[0].style.display = "block";
+function degree(e){
+	let len = lis.length;
+	if(difficulButton){//难度级别面板 开关。
 
-		}else if(i == 1){
-			grade.maxlost = 10;
-			fallspeed = 2.7;
-			createspeed = 1.8;
-		}else if(i == 2){
-			grade.maxlost = 5;
-			fallspeed= 2.5;
-			createspeed = 1.8;
-		}
-	},false)
+	for(let j = 0; j < len; j ++){
+    
+	window.setTimeout(function(){
+		lis[j].style.transform = "rotateY(90deg)";
+
+	},16*(j+1));
+	
 }
+	difficulButton = false;
 
-grade.gradecontent();
+}else{for(let u = 0; u < len; u ++){
+	window.setTimeout(function(){lis[u].style.transform = "rotateY(0deg)";},50*(u+1));
+}
+difficulButton = true;}
+
+
+
+for(let i = 0; i < len; i ++){
+       
+  
+
+     //z这里要是不注意将受到事件冒泡支配的恐惧
+	lis[i].addEventListener('click',function(e){
+		e.stopPropagation();//取消事件冒泡。
+		//为选中的难度级别加图片
+		for(var j = 0; j < len; j ++){//把所有小图片都消失掉，方便之后选中时赋值
+       	img[j].style.display = "none";
+};
+		img[i].style.display = "block";
+		
+        if(i === 0){//改变成绩木板和字母下落速度以及生成速度的初始值
+			grade.maxlost = 15;console.log(i)
+		}else if(i === 1){
+			grade.maxlost = 10;console.log(i)
+			fallspeed = 2.5;
+			createspeed = 1.5;
+		}else if(i === 2){
+			grade.maxlost = 5;console.log(i)
+			fallspeed= 2.5;
+			createspeed = 1;
+		}
+		grade.gradecontent();
+	},false)
+
+}
 };
 gameDeploy.addEventListener('click',degree,false);
 grade.gradecontent();
