@@ -72,13 +72,13 @@ for(let i = 0; i < len; i ++){
 		img[i].style.display = "block";
 		
         if(i === 0){//改变成绩木板和字母下落速度以及生成速度的初始值
-			grade.maxlost = 15;console.log(i)
+			grade.maxlost = 15;
 		}else if(i === 1){
-			grade.maxlost = 10;console.log(i)
+			grade.maxlost = 10;
 			fallspeed = 2.5;
 			createspeed = 1.5;
 		}else if(i === 2){
-			grade.maxlost = 5;console.log(i)
+			grade.maxlost = 5;
 			fallspeed= 2.5;
 			createspeed = 1;
 		}
