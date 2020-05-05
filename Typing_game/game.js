@@ -59,9 +59,6 @@ difficulButton = true;}
 
 
 for(let i = 0; i < len; i ++){
-       
-  
-
      //z这里要是不注意将受到事件冒泡支配的恐惧
 	lis[i].addEventListener('click',function(e){
 		e.stopPropagation();//取消事件冒泡。
