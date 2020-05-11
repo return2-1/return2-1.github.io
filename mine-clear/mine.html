@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>mine</title>
+
+</head>
+<body>
+ <div class="conf_box">
+     <div class="conf">设置:</div>
+     <div class="input">
+        W:<input type="number" name="W" class="width" value = "10">
+        H:<input type="number" name="H" class="height" value="10">
+       <img src="./mine.jpg" alt="mine" width="20px" height="20px">:<input type="number" name="mine" class="mine" value="20">
+        <input type="button" value="确认" class="btn">
+     </div>
+    <div class="mines">0</div>
+    <div class="time">0</div>
+ </div>
+<style>
+.conf_box{
+    position: absolute;
+    width: 320px;
+    height: 40px;
+    top:30px;
+    left: 50%;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    background:linear-gradient(to right,rgb(168, 255, 120), rgb(120, 255, 214));
+
+}
+
+.conf{
+    width: 40px;
+    height: 20px;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    position: relative;
+    top: 10px;
+
+
+}
+.input{
+    width: 280px;
+    height: 20px;
+    float: right;
+    position: relative;
+    top: 8px;
+}
+input{
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    outline: none;
+    position: relative;
+    
+}
+img{
+    vertical-align: middle;
+}
+.input .btn{
+    height:20px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 10px;
+    background: #FFEFBA;
+    border: none;
+    border-radius: 4px;
+}
+
+.mines,.time{
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    top: 43px;
+    background: black;
+    font-size: 18px;
+    color:red;
+    text-align: right;
+    line-height: 20px;
+}
+.time{
+    right: 0;
+
+}
+.mines{
+left: 0;
+}
+.time::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffae00 url(./time.jpg) ;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+.mines::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffae00 url(./mine.jpg) ;
+    background-position: center center;
+    background-size: 100% 100%;
+
+}
+
+</style>
+<script>
+function Map(wh,ht,mines){
+this.wh = wh;//扫雷区的长度为wh
+this.ht = ht;//高度为ht
+this.mine = [];//所有雷坐标的数组实例；
+this.square = [];//所有格子的坐标实例
+this.mines = mines;//雷的数量；
+this.mine_t = 0;//炸弹标记数量
+this.clock = true;//
+this.timer =  null;
+this.map = document.createElement('div');//创建地图格子；
+this.map.style.width=this.wh*20+"px";
+this.map.style.height=this.ht*20+"px";
+this.map.style.border="2px solid red";
+this.map.style.position="relative";
+this.map.style.margin = "0 auto";
+this.map.style.top = "100px";
+document.body.appendChild(this.map);
+};
+
+Map.prototype.rank=function(){//为地图里填格子。并记下坐标；
+for(var i=0; i<this.ht; i++){
+this.square.push([]);
+this.row=document.createElement('div');
+this.row.style.width=this.wh*20+"px";
+this.row.style.height="20px";
+this.map.appendChild(this.row);
+for(var j = 0; j < this.wh; j++){
+this.div = document.createElement('div');
+this.div.style.width="20px";
+this.div.style.height="20px";
+this.div.style.float="left";
+this.div.style.border="2px solid black";
+this.div.style.boxSizing="border-box";
+this.div.style.textAlign = "center";
+this.div.style.lineHeight = "20px";
+this.div.style.color = "#fff";
+this.row.appendChild(this.div);
+this.div.x=j;//格子坐标
+this.div.y=i;
+this.square[i].push(this.div);//把每个格子元素存到数组里，后期可以通过坐标来追踪到指定的格子元素
+};
+};
+};
+
+Map.prototype.buryMine = function(){//埋雷功能；
+      var x,y;
+      for(var i=0; i < this.mines; i ++){       
+          x=Math.floor(Math.random()*this.wh);
+            y=Math.floor(Math.random()*map.ht);
+           if(this.mine.length){
+               for(var j=0; j<this.mine.length; j++){
+                       if(x == this.mine[j][0] && y == this.mine[j][1]){
+                                 i --;
+                                break;
+};
+};
+};
+              this.square[y][x].mine=1;
+               this.mine.push([x,y]);               
+};
+
+};
+
+var scanner = function(target){//雷达功能；
+      var mine_count=0;
+      var x = target.x,
+          y = target.y,        
+          mines = [];
+       //    target.scanner = 1;
+      if(target.mine){//如果目标自身有雷，则游戏结束，全部雷爆炸。
+          clearInterval(map.timer);
+          map.timer = null;
+          map.map.style.fontSize = 0;
+          map.square.forEach(function(target){//先把所有的格子变成安全的颜色
+              target.forEach(function(div){div.style.background= "#99f2c8";});
+          });
+          map.mine.forEach(function(target){//再通过遍历存有雷坐标的数组来把所有雷区填上雷的标志；
+             
+              map.square[target[1]][target[0]].style.background = "#ff4b2b url(./mine.jpg) ";
+              map.square[target[1]][target[0]].style.backgroundSize = "100% 100%";
+              map.square[target[1]][target[0]].style.backgroundPosition = "center";   
+        });
+          return;//不再往下执行，游戏结束；
+};
+
+
+     //如果目标元素没有雷，这扫描周边的八个格子。
+     if(x>0 && !map.square[y][x-1].style.backgroundColor){//例；目标元素的左边元素存在，且没有被
+          mines.push([x-1,y]);
+         // map.square[y][x-1].scanner=1;
+          if(map.square[y][x-1].mine){
+           ++mine_count;
+          
+   };
+};
+    
+     if(x > 0 && y < map.ht-1 && !map.square[y+1][x-1].style.backgroundColor){ 
+        mines.push([x-1,y+1]);
+      //  map.square[y+1][x-1].scanner=1;
+       if(map.square[y+1][x-1].mine){
+           ++mine_count;
+         
+   };
+
+};
+     if(x > 0 && y > 0 && !map.square[y-1][x-1].style.backgroundColor){
+         mines.push([x-1,y-1]);
+       //  map.square[y-1][x-1].scanner=1;
+        if(map.square[y-1][x-1].mine){
+           ++mine_count;
+          
+   };
+};
+     if(y < map.ht-1 && !map.square[y+1][x].style.backgroundColor){
+            mines.push([x,y+1]);
+          //  map.square[y+1][x].scanner=1;
+          if(map.square[y+1][x].mine){
+           ++mine_count;
+          
+   };
+};
+     if(y > 0 && !map.square[y-1][x].style.backgroundColor){
+              mines.push([x,y-1]);
+          //   map.square[y-1][x].scanner=1;
+           if( map.square[y-1][x].mine){
+           ++mine_count;
+         
+   };
+
+};
+     if(x<map.wh-1 && !map.square[y][x+1].style.backgroundColor){
+       mines.push([x+1,y]);
+        //  map.square[y][x+1].scanner=1;
+         if(map.square[y][x+1].mine){
+          ++ mine_count;
+         
+   };
+};
+     if(x<map.wh-1 && y<map.ht-1 && !map.square[y+1][x+1].style.backgroundColor){
+            mines.push([x+1,y+1]);
+           // map.square[y+1][x+1].scanner=1;
+           if(map.square[y+1][x+1].mine){
+           ++mine_count;
+          
+   };
+};
+     if(x<map.wh-1 && y>0 && !map.square[y-1][x+1].style.backgroundColor){
+          mines.push([x+1,y-1]);
+         // map.square[y-1][x+1].scanner=1;
+          if(map.square[y-1][x+1].mine){
+           ++mine_count;
+          
+   };
+};
+   
+
+   if(mine_count == 0){
+       target.style.background = "#99f2c8";
+       
+      for(var i=0; i<mines.length; i++){
+           map.square[mines[i][1]][mines[i][0]].style.background = "#99f2c8";
+           scanner( map.square[mines[i][1]][mines[i][0]]);
+          
+         };
+     
+     
+     }else{
+      target.innerHTML = mine_count;
+      target.style.background = "#009fff";
+     
+     };
+
+      
+};
+var count = document.getElementsByClassName('mines')[0];
+var time = document.getElementsByClassName('time')[0];
+function countchange(){//炸弹标记数量
+    count.innerHTML = map.mine_t;
+    };
+
+function timechange(){//时间计时器
+    var s;
+if(map.clock){
+    map.clock = false;
+    s = 0;
+    map.timer = setInterval(function(){
+         ++ s;
+         time.innerHTML = s;
+    },1000);
+
+};
+  
+};    
+
+function handle(){//点击事件；
+        map.map.addEventListener('mousedown',function(e){
+        var target = e.target;
+        document.oncontextmenu = function(e){
+          e.preventDefault();
+      };
+      timechange();
+          if(e.button==2 && !target.style.backgroundColor){
+              if(target.tab){
+                  --map.mine_t;
+                  countchange();
+                  target.style.background = "none";
+                  target.tab = 0;
+                }else if(!target.tab){
+                    ++map.mine_t;
+                    countchange();
+                target.style.backgroundImage = "url(./mine.jpg)";
+              target.style.backgroundSize = "100% 100%";
+              target.style.backgroundPosition = "center";
+              target.tab = 1;
+
+              };
+              
+          }else if(e.button==0){
+              if(target.tab){
+                  --map.mine_t;
+                  countchange();
+              }
+            scanner(target);
+          }
+
+
+      });
+    };
+
+
+var map = new Map(10,10,20);
+map.rank();
+map.buryMine();
+handle()
+      
+   
+     
+      document.getElementsByClassName("btn")[0].onclick = function(){ //设置功能；
+          var w = document.getElementsByClassName("width")[0].value,
+              h = document.getElementsByClassName('height')[0].value,
+              m = document.getElementsByClassName("mine")[0].value;
+              clearInterval(map.timer);
+              time.innerHTML=0;
+              map.map.remove();
+              map = new Map(w,h,m);
+              map.rank();
+              map.buryMine();
+              handle();
+      };
+        
+      
+</script>
+</body>
+
+
+</html>
