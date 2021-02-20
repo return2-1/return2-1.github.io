@@ -35,7 +35,6 @@ export default context =>{
                 context.state = store.state
                 resolve(app)
             }).catch(reject)
-
         },reject)
 
     })
