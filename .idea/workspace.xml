@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="65f39588-0c67-4e7e-a58d-5e62c8dd319a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_COMMON_BRANCH" value="master" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="ProjectId" id="1ojF6qk2yCccBMe9bxnVEdIJu7V" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65f39588-0c67-4e7e-a58d-5e62c8dd319a" name="Default Changelist" comment="" />
+      <created>1613791920763</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613791920763</updated>
+      <workItem from="1613791922025" duration="853000" />
+      <workItem from="1613792786456" duration="2000" />
+      <workItem from="1613792798914" duration="62000" />
+    </task>
+    <task id="LOCAL-00001" summary=";;">
+      <created>1613792098862</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613792098862</updated>
+    </task>
+    <task id="LOCAL-00002" summary="删除ssr">
+      <created>1613792465411</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613792465411</updated>
+    </task>
+    <task id="LOCAL-00003" summary="删除ssr">
+      <created>1613792652455</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613792652455</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=";;" />
+    <MESSAGE value="删除ssr" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除ssr" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="139" key="CommitChangelistDialog2" timestamp="1613792652376">
+      <screen x="64" y="23" width="1728" height="1097" />
+    </state>
+    <state x="424" y="139" key="CommitChangelistDialog2/64.23.1728.1097@64.23.1728.1097" timestamp="1613792652376" />
+    <state x="237" y="122" key="MergeDialog" timestamp="1613791995969">
+      <screen x="64" y="23" width="1728" height="1097" />
+    </state>
+    <state x="237" y="122" key="MergeDialog/64.23.1728.1097@64.23.1728.1097" timestamp="1613791995969" />
+    <state x="809" y="448" key="MultipleFileMergeDialog" timestamp="1613791996005">
+      <screen x="64" y="23" width="1728" height="1097" />
+    </state>
+    <state x="809" y="448" key="MultipleFileMergeDialog/64.23.1728.1097@64.23.1728.1097" timestamp="1613791996005" />
+    <state x="528" y="312" key="Vcs.Push.Dialog.v2" timestamp="1613792661166">
+      <screen x="64" y="23" width="1728" height="1097" />
+    </state>
+    <state x="528" y="312" key="Vcs.Push.Dialog.v2/64.23.1728.1097@64.23.1728.1097" timestamp="1613792661166" />
+    <state x="538" y="361" key="git4idea.merge.GitPullDialog" timestamp="1613791953540">
+      <screen x="64" y="23" width="1728" height="1097" />
+    </state>
+    <state x="538" y="361" key="git4idea.merge.GitPullDialog/64.23.1728.1097@64.23.1728.1097" timestamp="1613791953540" />
+  </component>
+</project>
