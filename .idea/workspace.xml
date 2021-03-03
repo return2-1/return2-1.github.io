@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65f39588-0c67-4e7e-a58d-5e62c8dd319a" name="Default Changelist" comment="" />
+    <list default="true" id="65f39588-0c67-4e7e-a58d-5e62c8dd319a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/mynuxt/pages/cart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mynuxt/pages/cart/_name.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mynuxt/pages/login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mynuxt/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -14,7 +29,7 @@
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/mynuxt" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1ojF6qk2yCccBMe9bxnVEdIJu7V" />
@@ -31,6 +46,10 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mynuxt/pages/cart/_name" />
+      <recent name="$PROJECT_DIR$/mynuxt/pages/cart" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -47,7 +66,7 @@
       <updated>1613791920763</updated>
       <workItem from="1613791922025" duration="853000" />
       <workItem from="1613792786456" duration="2000" />
-      <workItem from="1613792798914" duration="62000" />
+      <workItem from="1613792798914" duration="14432000" />
     </task>
     <task id="LOCAL-00001" summary=";;">
       <created>1613792098862</created>
@@ -70,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613792652455</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ssr搭建">
+      <created>1613793435899</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1613793435899</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,13 +105,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value=";;" />
     <MESSAGE value="删除ssr" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除ssr" />
+    <MESSAGE value="ssr搭建" />
+    <option name="LAST_COMMIT_MESSAGE" value="ssr搭建" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="139" key="CommitChangelistDialog2" timestamp="1613792652376">
+    <state x="424" y="139" key="CommitChangelistDialog2" timestamp="1613793435813">
       <screen x="64" y="23" width="1728" height="1097" />
     </state>
-    <state x="424" y="139" key="CommitChangelistDialog2/64.23.1728.1097@64.23.1728.1097" timestamp="1613792652376" />
+    <state x="373" y="118" key="CommitChangelistDialog2/0.0.1792.1120@0.0.1792.1120" timestamp="1613793339535" />
+    <state x="424" y="139" key="CommitChangelistDialog2/64.23.1728.1097@64.23.1728.1097" timestamp="1613793435813" />
     <state x="237" y="122" key="MergeDialog" timestamp="1613791995969">
       <screen x="64" y="23" width="1728" height="1097" />
     </state>
@@ -94,10 +122,10 @@
       <screen x="64" y="23" width="1728" height="1097" />
     </state>
     <state x="809" y="448" key="MultipleFileMergeDialog/64.23.1728.1097@64.23.1728.1097" timestamp="1613791996005" />
-    <state x="528" y="312" key="Vcs.Push.Dialog.v2" timestamp="1613792661166">
+    <state x="528" y="312" key="Vcs.Push.Dialog.v2" timestamp="1613793442967">
       <screen x="64" y="23" width="1728" height="1097" />
     </state>
-    <state x="528" y="312" key="Vcs.Push.Dialog.v2/64.23.1728.1097@64.23.1728.1097" timestamp="1613792661166" />
+    <state x="528" y="312" key="Vcs.Push.Dialog.v2/64.23.1728.1097@64.23.1728.1097" timestamp="1613793442967" />
     <state x="538" y="361" key="git4idea.merge.GitPullDialog" timestamp="1613791953540">
       <screen x="64" y="23" width="1728" height="1097" />
     </state>

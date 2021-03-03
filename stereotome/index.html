@@ -39,7 +39,7 @@ console.log(init)
 
 table.addEventListener("click",function(e){
 var current = e.target.id;
-if(current != Init){
+if(current != Init && e.target.localName==='input'){
 
 init.replace(Init,current)
 console.log(init)
@@ -48,14 +48,6 @@ Init = current;
 }
 
 })
-
-
-
-
-
-
-
-
 }());
 
 
